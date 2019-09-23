@@ -23,14 +23,14 @@ public class UserService {
         users.remove(users.size() - 1);
     }
 
-//    public void updateUser(String invitee, User user) {
-//        for (int i = 0; i < users.size(); i++) {
-//            User u = users.get(i);
-//            if (u.getInvitee().equals(invitee)) {
-//                users.set(i, user);
-//                return;
-//            }
-//        }
-//    }
+    public void updateUser(String invitee, User user) {
+        for (int i = 0; i < users.size(); i++) {
+            User u = users.get(i);
+            if (u.getInvitee().equals(invitee)) {
+                users.set(i, user);
+                return;
+            }
+        }
+    }
 
 }
