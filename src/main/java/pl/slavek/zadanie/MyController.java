@@ -14,18 +14,18 @@ import java.util.List;
         @Autowired
         private UserService userService;
 
-        @RequestMapping(method = RequestMethod.GET, value = "/invitation")
+        @GetMapping("/invitation")
         public List<User> getUser() {
             return userService.getUsers();
         }
 
         @ResponseStatus(HttpStatus.CREATED)
-        @RequestMapping(method = RequestMethod.POST, value = "/invitation")
+        @PostMapping("/invitation")
         public void addUser(@RequestBody User user) {
             userService.addUser(user);
         }
 
-        @RequestMapping(method = RequestMethod.DELETE, value = "/invitation")
+        @DeleteMapping("/invitation")
         public void deleteUser(String invetee) {
             userService.deleteUser(invetee);
         }
