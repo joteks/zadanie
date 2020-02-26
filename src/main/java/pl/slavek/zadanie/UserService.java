@@ -2,6 +2,7 @@ package pl.slavek.zadanie;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,8 +20,15 @@ public class UserService {
         users.add(user);
     }
 
-    public void deleteUser() {
-        users.remove(users.size() - 1);
+    public void deleteUser(User user) {
+        users.remove(user);
+    }
+
+    public void deleteUser(String invitee) {
+        users.stream()
+             .filter(user -> user.getInvitee().equals(invitee))
+             .findFirst()
+             .ifPresent(user -> users.remove(user));
     }
 
     public void updateUser(String invitee, User user) {

@@ -26,8 +26,8 @@ import java.util.List;
         }
 
         @RequestMapping(method = RequestMethod.DELETE, value = "/invitation")
-        public void deleteUser() {
-            userService.deleteUser();
+        public void deleteUser(String invetee) {
+            userService.deleteUser(invetee);
         }
 
 }
