@@ -68,8 +68,6 @@ public class MyAppTests {
 
         //then
         assertEquals(1, users.size());
-
-
     }
 
 }
